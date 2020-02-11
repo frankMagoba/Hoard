@@ -1,0 +1,70 @@
+name:                Hoard
+version:             0.1.0.0
+github:              "ners/Hoard"
+license:             Apache-2.0
+author:              "ners"
+maintainer:          "ners@gmx.ch"
+copyright:           "(c) 2020"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/ners/Hoard#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- JuicyPixels
+- aeson
+- beam-core
+- beam-migrate
+- beam-sqlite
+- data-default-class
+- directory
+- editor-open
+- either
+- file-embed
+- filepath
+- flac
+- flac-picture
+- path
+- path-io
+- regex-compat
+- split
+- sqlite-simple
+- template-haskell
+- text
+- utf8-string
+- yaml
+- yaml-pretty-extras
+
+library:
+  source-dirs: src
+
+executables:
+  Hoard-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Hoard
+
+tests:
+  Hoard-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - Hoard
